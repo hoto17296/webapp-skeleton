@@ -8,12 +8,16 @@
   },
   "scripts": {
     "start": "node -e \"require('.').listen(process.env.PORT)\"",
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint ."
   },
   "repository": "hoto17296/webapp-skeleton",
   "author": "hoto17296",
   "license": "CC0-1.0",
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
     "mocha": "^3.4.2",
     "thip": "^0.2.0"
   },
