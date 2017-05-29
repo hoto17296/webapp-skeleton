@@ -1,0 +1,23 @@
+{
+  "name": "webapp-skeleton",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/app.js",
+  "engines": {
+    "node": ">= 6"
+  },
+  "scripts": {
+    "start": "node -e \"require('.').listen(process.env.PORT)\"",
+    "test": "mocha"
+  },
+  "repository": "hoto17296/webapp-skeleton",
+  "author": "hoto17296",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "mocha": "^3.4.2",
+    "thip": "^0.2.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
