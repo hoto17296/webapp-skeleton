@@ -22,6 +22,8 @@
     "thip": "^0.2.0"
   },
   "dependencies": {
-    "express": "^4.15.3"
+    "connect-redis": "^3.3.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3"
   }
 }
