@@ -14,3 +14,5 @@ services:
       DEBUG: express:*
       SECRET_KEY: deadbeef
       REDIS_URL: redis://redis/
+    depends_on:
+      - redis
