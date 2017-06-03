@@ -14,5 +14,6 @@ services:
       DEBUG: express:*
       SECRET_KEY: deadbeef
       REDIS_URL: redis://redis/
+    command: npm run dev
     depends_on:
       - redis
