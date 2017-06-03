@@ -1,6 +1,9 @@
 version: '3'
 services:
 
+  db:
+    image: postgres:alpine
+
   redis:
     image: redis:alpine
 
@@ -13,7 +16,9 @@ services:
     environment:
       DEBUG: express:*
       SECRET_KEY: deadbeef
+      DATABASE_URL: postgresql://postgres@db/postgres
       REDIS_URL: redis://redis/
     command: npm run dev
     depends_on:
+      - db
       - redis
