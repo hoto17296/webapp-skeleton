@@ -7,10 +7,14 @@ const connection = new Promise((resolve, reject) => {
 connection.catch((e) => { throw e; });
 
 module.exports = {
-  query(text, values) {
+  query(text, values, one = false) {
     return new Promise((resolve, reject) => {
       connection.then((client) => {
-        client.query(text, values, (err, res) => err ? reject(err) : resolve(res));
+        client.query(text, values, (err, res) => {
+          if (err) return reject(err);
+          const data = one ? res.rows[0] : res.rows;
+          return resolve(data, res);
+        });
       });
     });
   },

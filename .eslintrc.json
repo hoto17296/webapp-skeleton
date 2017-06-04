@@ -1,6 +1,7 @@
 {
   "extends": "airbnb-base",
   "rules": {
-    "no-confusing-arrow": "warn"
+    "no-confusing-arrow": "warn",
+    "no-shadow": "warn"
   }
 }
