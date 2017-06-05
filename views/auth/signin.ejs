@@ -4,26 +4,32 @@
     <%- include('../partials/head'); -%>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <form action="/signin" method="post">
-      <% if (errors.length > 0) { %>
-        <ul>
-          <% for (let i in errors) { %>
-            <li><%= errors[i] %></li>
-          <% } %>
-        </ul>
-      <% } %>
-      <div>
-        <label>Username:</label>
-        <input type="text" name="username" value="<%= body.username %>" required />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" name="password" value="<%= body.password %>" required />
-      </div>
-      <div>
-        <input type="submit" value="Sign in" />
-      </div>
-    </form>
+    <main class="ui container">
+      <form class="ui form" action="/signin" method="post">
+        <h2 class="ui dividing header"><%= title %></h2>
+        <% if (errors.length > 0) { %>
+          <div class="ui visible error message">
+            <div class="header">
+              <i class="warning circle icon"></i>
+              Error
+            </div>
+            <ul class="list">
+              <% for (let i in errors) { %>
+                <li><%= errors[i] %></li>
+              <% } %>
+            </ul>
+          </div>
+        <% } %>
+        <div class="field">
+          <label>Username</label>
+          <input type="text" name="username" value="<%= body.username %>" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" value="<%= body.password %>" required />
+        </div>
+        <button class="ui primary button" type="submit">Sign in</button>
+      </form>
+    </main>
   </body>
 </html>
