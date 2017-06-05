@@ -1,0 +1,14 @@
+<header class="ui menu">
+  <div class="ui container">
+    <a class="header item" href="/"><%= sitename %></a>
+    <div class="right menu">
+      <% if (auth.authorized) { %>
+        <div class="item"><%= auth.user.username %></div>
+        <a class="item" href="/signout">Sign out</a>
+      <% } else { %>
+        <a class="item" href="/signin">Sign in</a>
+        <a class="item" href="/signin">Sign up</a>
+      <% } %>
+    </div>
+  </div>
+</header>
