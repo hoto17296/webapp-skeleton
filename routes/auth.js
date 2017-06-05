@@ -1,12 +1,17 @@
 const router = require('express').Router();
 const AuthError = require('../lib/auth').AuthError;
 
-router.get('/signup', (req, res) => {
+function redirectIfAlreadyAuthorized(req, res, next) {
+  if (!req.auth.authorized) next();
+  else res.redirect('/');
+}
+
+router.get('/signup', redirectIfAlreadyAuthorized, (req, res) => {
   const [title, body, errors] = ['Sign up', {}, []];
   return res.render('auth/signup', { title, body, errors });
 });
 
-router.post('/signup', (req, res) => {
+router.post('/signup', redirectIfAlreadyAuthorized, (req, res) => {
   const [title, body, errors] = ['Sign up', req.body, []];
 
   if (body.password1 !== body.password2) {
@@ -28,12 +33,13 @@ router.post('/signup', (req, res) => {
     });
 });
 
-router.get('/signin', (req, res) => {
+router.get('/signin', redirectIfAlreadyAuthorized, (req, res) => {
+  if (req.auth.authorized) return res.redirect('/');
   const [title, body, errors] = ['Sign in', {}, []];
   return res.render('auth/signin', { title, body, errors });
 });
 
-router.post('/signin', (req, res) => {
+router.post('/signin', redirectIfAlreadyAuthorized, (req, res) => {
   const [title, body, errors] = ['Sign in', req.body, []];
 
   return req.auth.signin(body.username, body.password)
