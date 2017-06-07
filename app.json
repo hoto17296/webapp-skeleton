@@ -3,6 +3,11 @@
   "scripts": {
     "postdeploy": "node tasks/initdb.js"
   },
+  "env": {
+    "SECRET_KEY": {
+      "description": "Salt for crypto"
+    }
+  },
   "addons": [
     "heroku-postgresql",
     "heroku-redis"
