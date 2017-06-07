@@ -1,0 +1,10 @@
+{
+  "name": "WebApp Skeleton",
+  "scripts": {
+    "postdeploy": "node tasks/initdb.js"
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ]
+}
