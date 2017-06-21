@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "node -e \"require('.').listen(process.env.PORT)\"",
-    "dev": "nodemon --exec 'npm start' -w lib -w config -w routes -w stores",
     "test": "mocha",
     "lint": "eslint ."
   },
@@ -20,7 +19,6 @@
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.3.0",
     "mocha": "^3.4.2",
-    "nodemon": "^1.11.0",
     "thip": "^0.2.0"
   },
   "dependencies": {

@@ -22,7 +22,7 @@ services:
       SECRET_KEY: deadbeef
       DATABASE_URL: postgresql://postgres@db/postgres
       REDIS_URL: redis://redis/
-    command: npm run dev
+    command: nodemon --exec 'npm start' -w lib -w config -w routes -w stores
     depends_on:
       - db
       - redis
