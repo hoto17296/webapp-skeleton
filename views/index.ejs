@@ -2,6 +2,10 @@
 <html>
   <head>
     <%- include('./partials/head'); -%>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      window.socket = io.connect();
+    </script>
   </head>
   <body>
     <%- include('./partials/header'); -%>

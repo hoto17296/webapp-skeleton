@@ -2,12 +2,12 @@
   "name": "webapp-skeleton",
   "version": "0.0.0",
   "description": "",
-  "main": "lib/app.js",
+  "main": "lib/server.js",
   "engines": {
     "node": ">= 6"
   },
   "scripts": {
-    "start": "node -e \"require('.').listen(process.env.PORT)\"",
+    "start": "node -e \"require('.').start()\"",
     "test": "mocha",
     "lint": "eslint ."
   },
@@ -28,6 +28,7 @@
     "express": "^4.15.3",
     "express-session": "^1.15.3",
     "pg": "^6.2.3",
-    "redis": "^2.7.1"
+    "redis": "^2.7.1",
+    "socket.io": "^2.0.3"
   }
 }
